@@ -304,7 +304,13 @@ const StatCard = (props: StatCardProps) => {
     );
 };
 
-    const SectionHeader = ({ variant, tagText, title, description, showLink }) => (
+const SectionHeader = ({ variant, tagText, title, description, showLink }: {
+  variant: string;
+  tagText: string;
+  title: string;
+  description: string;
+  showLink?: boolean;
+}) => (
   <div className="space-y-2">
     <span className="inline-block px-4 py-1.5 text-[#eeda03] rounded-full text-sm font-bold">
       {tagText}
@@ -317,7 +323,6 @@ const StatCard = (props: StatCardProps) => {
     </p>
   </div>
 );
-
 
 export default function WhyChooseUs() {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);

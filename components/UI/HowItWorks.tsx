@@ -4,8 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export default function HowItWorksSection() {
-  const [visibleSteps, setVisibleSteps] = useState([]);
-  const stepsRefs = useRef([]);
+  const [visibleSteps, setVisibleSteps] = useState<number[]>([]);
+  const stepsRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const steps = [
     {
@@ -43,7 +43,7 @@ export default function HowItWorksSection() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const index = stepsRefs.current.indexOf(entry.target);
+          const index = stepsRefs.current.indexOf(entry.target as HTMLDivElement);
           if (index !== -1 && !visibleSteps.includes(index)) {
             setVisibleSteps((prev) => [...prev, index]);
           }
@@ -92,9 +92,10 @@ export default function HowItWorksSection() {
             
             return (
               <div 
-                key={index}
-                ref={(el) => (stepsRefs.current[index] = el)}
-                className={`relative group overflow-visible md:overflow-hidden bg-transparent md:bg-white rounded-2xl transition-all duration-500 md:hover:shadow-xl md:hover:-translate-y-1 ${pattern} ${
+                key={index} 
+                ref={(el) => {
+                  stepsRefs.current[index] = el;
+                }}                className={`relative group overflow-visible md:overflow-hidden bg-transparent md:bg-white rounded-2xl transition-all duration-500 md:hover:shadow-xl md:hover:-translate-y-1 ${pattern} ${
                   visibleSteps.includes(index) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}

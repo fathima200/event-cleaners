@@ -26,7 +26,7 @@ const faqData = [
   },
 ];
 
-const AccordionItem = ({ question, answer, isOpen, onClick }) => {
+const AccordionItem = ({ question, answer, isOpen, onClick }: { question: string; answer: string; isOpen: boolean; onClick: () => void }) => {
   return (
     <div className="relative box-border caret-transparent shrink-0 w-full">
       <div className="relative content-start items-start box-border caret-transparent flex flex-col h-min justify-center w-full overflow-hidden py-4 border-b border-gray-500/30">

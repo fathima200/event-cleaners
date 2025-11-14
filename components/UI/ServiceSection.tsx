@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Mock SectionHeader component
-const SectionHeader = ({ variant, tagText, title, description, showLink }) => (
+const SectionHeader = ({ variant, tagText, title, description, showLink }: { variant: string; tagText: string; title: string; description: string; showLink: boolean }) => (
   <div className="space-y-4">
     <span className="inline-block px-4 py-1.5 text-[#eeda03] rounded-full text-sm font-semibold">
       {tagText}
@@ -20,8 +20,8 @@ const SectionHeader = ({ variant, tagText, title, description, showLink }) => (
 );
 
 export default function ServicesSection() {
-  const [visibleCards, setVisibleCards] = useState([]);
-  const cardRefs = useRef([]);
+  const [visibleCards, setVisibleCards] = useState<number[]>([]);
+    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const services = [
     {
@@ -79,10 +79,9 @@ export default function ServicesSection() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const index = cardRefs.current.indexOf(entry.target);
+          const index = cardRefs.current.findIndex(ref => ref === entry.target);
           if (index !== -1 && !visibleCards.includes(index)) {
-            setVisibleCards((prev) => [...prev, index]);
-          }
+            setVisibleCards((prev) => [...prev, index]);          }
         }
       });
     }, observerOptions);
@@ -117,9 +116,7 @@ export default function ServicesSection() {
           {/* First Row */}
           <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full overflow-hidden md:flex-row">
             {/* Card 1 - Large */}
-            <div
-              ref={(el) => (cardRefs.current[0] = el)}
-              className={`relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:w-px md:grow-[0.75] transition-all duration-700 ease-out ${
+            <div ref={(el) => { cardRefs.current[0] = el; }}              className={`relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:w-px md:grow-[0.75] transition-all duration-700 ease-out ${
                 visibleCards.includes(0) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
               }`}
             >
@@ -181,8 +178,7 @@ export default function ServicesSection() {
             </div>
 
             {/* Card 2 - Normal */}
-            <div
-              ref={(el) => (cardRefs.current[1] = el)}
+            <div ref={(el) => { cardRefs.current[1] = el; }}
               className={`relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:w-px md:grow transition-all duration-700 ease-out ${
                 visibleCards.includes(1) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
               }`}
@@ -249,8 +245,7 @@ export default function ServicesSection() {
           {/* Second Row */}
           <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full overflow-hidden md:flex-row">
             {/* Card 3 - Normal */}
-            <div
-              ref={(el) => (cardRefs.current[2] = el)}
+            <div ref={(el) => {cardRefs.current[2] = el; }}
               className={`relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:w-px md:grow transition-all duration-700 ease-out ${
                 visibleCards.includes(2) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
               }`}
@@ -313,8 +308,7 @@ export default function ServicesSection() {
             </div>
 
             {/* Card 4 - Large */}
-            <div
-              ref={(el) => (cardRefs.current[3] = el)}
+            <div ref={(el) => {cardRefs.current[3] = el}}
               className={`relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:w-px md:grow-[0.75] transition-all duration-700 ease-out ${
                 visibleCards.includes(3) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
               }`}

@@ -10,7 +10,12 @@ import WhyChooseUs from "@/components/UI/WhyChooseUs";
 import OurExperience from "@/components/UI/OurExperience";
 import ServicesSection from "@/components/UI/ServiceSection";
 
-
+type ValueCardProps = {
+  imageUrl: string;
+  imageVariant: string;
+  title: string;
+  description: string;
+};
 function StorySection() {
   const [visibleElements, setVisibleElements] = useState<number[]>([]);
   const [counters, setCounters] = useState({ cleans: 0, rebook: 0 });
@@ -278,7 +283,7 @@ const HeroText = () => {
   );
 };
 
-const ValueCard = ({ imageUrl, imageVariant, title, description }) => {
+const ValueCard = ({ imageUrl, imageVariant, title, description }: ValueCardProps) => {
   return (
     <div className="relative box-border caret-transparent basis-auto grow-0 shrink-0 max-w-[520px] w-full md:basis-0 md:grow md:max-w-none md:w-px">
       <div className="relative content-center items-center bg-white box-border caret-transparent gap-x-8 flex flex-col h-min justify-center gap-y-8 w-full p-8 rounded-[32px]">
