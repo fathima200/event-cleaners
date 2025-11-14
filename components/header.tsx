@@ -422,6 +422,14 @@ export default function Navbar() {
         <div className="bg-[#eeda03] border border-white/10 rounded-[12px]">
           <div className="flex flex-col items-center gap-y-6 px-6 py-8">
             <button
+              onClick={handleMobileNavClick('/')}
+              className="text-black text-lg font-geist tracking-[-0.6px] hover:text-[#0a0e27] transition-all duration-300 font-medium w-full text-center"
+            >
+              Home
+            </button>       
+                  <div className="w-16 h-px bg-black/10"></div>
+
+                 <button
               onClick={handleMobileNavClick('/about')}
               className="text-black text-lg font-geist tracking-[-0.6px] hover:text-[#0a0e27] transition-all duration-300 font-medium w-full text-center"
             >
