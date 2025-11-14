@@ -49,7 +49,7 @@ export const SectionHeader = (props: SectionHeaderProps) => {
 
   const getTagElementClassName = () => {
     if (props.variant === "variant1" || props.variant === "variant2") {
-      return `text-gray-500 text-sm box-border caret-transparent tracking-[-0.56px] leading-[16.8px] uppercase text-nowrap font-geist md:text-base md:tracking-[-0.64px] md:leading-[19.2px] ${props.tagClassName || ""}`;
+      return `text-gray-400 text-sm box-border caret-transparent tracking-[-0.56px] leading-[16.8px] uppercase text-nowrap font-geist md:text-base md:tracking-[-0.64px] md:leading-[19.2px] ${props.tagClassName || ""}`;
     }
     return `text-sm box-border caret-transparent tracking-[-0.56px] leading-[16.8px] break-words text-center uppercase font-geist md:text-base md:tracking-[-0.64px] md:leading-[19.2px] ${props.tagClassName || ""}`;
   };
@@ -83,9 +83,9 @@ export const SectionHeader = (props: SectionHeaderProps) => {
 
   const getTitleClassName = () => {
     if (props.variant === "variant1" || props.variant === "variant2") {
-      return `text-slate-900 text-5xl font-light box-border caret-transparent tracking-[-1.92px] leading-[48px] break-words font-medium  text-left font-geist md:text-[80px] md:tracking-[-3.2px] md:leading-[75px] ${props.titleClassName || ""}`;
+      return `text-white text-5xl font-bold box-border caret-transparent tracking-[-1.92px] leading-[48px] break-words text-left font-geist md:text-[80px] md:tracking-[-3.2px] md:leading-[75px] ${props.titleClassName || ""}`;
     }
-    return `text-5xl font-light box-border caret-transparent tracking-[-1.92px] leading-[48px] break-words text-center font-geist md:text-[80px] md:tracking-[-3.2px] md:leading-[75px] ${props.titleClassName || ""}`;
+    return `text-5xl font-bold box-border caret-transparent tracking-[-1.92px] leading-[48px] break-words text-center font-geist md:text-[80px] md:tracking-[-3.2px] md:leading-[75px] ${props.titleClassName || ""}`;
   };
 
   const getDescriptionOuterClassName = () => {
@@ -102,7 +102,7 @@ export const SectionHeader = (props: SectionHeaderProps) => {
 
   const getDescriptionClassName = () => {
     if (props.variant === "variant1") {
-      return `text-slate-600 text-base box-border caret-transparent tracking-[-0.64px] leading-[21px] break-words text-left font-geist md:text-lg md:tracking-[-0.72px] md:leading-6 ${props.descriptionClassName || ""}`;
+      return `text-gray-300 text-base box-border caret-transparent tracking-[-0.64px] leading-[21px] break-words text-left font-geist md:text-lg md:tracking-[-0.72px] md:leading-6 ${props.descriptionClassName || ""}`;
     }
     return `text-base box-border caret-transparent tracking-[-0.64px] leading-[21px] break-words text-center font-geist md:text-lg md:tracking-[-0.72px] md:leading-6 ${props.descriptionClassName || ""}`;
   };
@@ -146,7 +146,7 @@ export const SectionHeader = (props: SectionHeaderProps) => {
         <div className={getHeaderContainerClassName()}>
           {(props.variant === "variant3" || props.variant === "variant4") && (
             <div className="relative box-border caret-transparent shrink-0 content-center items-center gap-x-0 flex flex-col h-min justify-center gap-y-0 w-full overflow-hidden">
-              <div className="relative bg-yellow-400 box-border caret-transparent shrink-0 h-[3px] w-[33px]"></div>
+              <div className="relative bg-[#eeda03] box-border caret-transparent shrink-0 h-[3px] w-[33px]"></div>
               <div className={getTagContainerClassName()}>{renderTag()}</div>
             </div>
           )}
@@ -202,7 +202,7 @@ export const SectionHeader = (props: SectionHeaderProps) => {
                   <div className="relative box-border caret-transparent shrink-0 h-14 md:h-[70px]">
                     <a
                       href={props.linkUrl}
-                      className="relative text-blue-700 content-center  items-center bg-yellow-400 shadow-[rgba(246,227,4,0.32)_0px_8px_25px_0px] box-border caret-transparent gap-x-5 flex h-full justify-center gap-y-5 w-min pl-10 pr-3 py-[30px] rounded-[35px]"
+                      className="relative text-blue-700 content-center  items-center bg-[#eeda03] box-border caret-transparent gap-x-5 flex h-full justify-center gap-y-5 w-min pl-10 pr-3 py-[30px] rounded-[12px]"
                     >
                       <div className="relative content-center items-center box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min">
                         <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap">

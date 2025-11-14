@@ -34,3 +34,79 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+```
+event-cleaners
+├─ .hintrc
+├─ app
+│  ├─ about
+│  │  └─ page.tsx
+│  ├─ contact
+│  │  └─ page.tsx
+│  ├─ favicon.ico
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  ├─ page.tsx
+│  └─ services
+│     ├─ page.tsx
+│     └─ [slug]
+│        └─ page.tsx
+├─ components
+│  ├─ CTABlock.tsx
+│  ├─ CTAButton.tsx
+│  ├─ footer.tsx
+│  ├─ header.tsx
+│  ├─ SectionHeader.tsx
+│  └─ UI
+│     ├─ FAQAccordion.tsx
+│     ├─ FinalCTA.tsx
+│     ├─ hero.tsx
+│     ├─ HowItWorks.tsx
+│     ├─ OurExperience.tsx
+│     ├─ QuoteForm.tsx
+│     ├─ ServiceAreas.tsx
+│     ├─ ServiceCard.tsx
+│     ├─ ServiceSection.tsx
+│     ├─ StatsCard.tsx
+│     ├─ Testimonial.tsx
+│     ├─ Testimonials.tsx
+│     └─ WhyChooseUs.tsx
+├─ eslint.config.mjs
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ public
+│  ├─ 66bb5fb620b69a0d4705bed5_Blog 3.jpg
+│  ├─ a-guy.avif
+│  ├─ a-logo.png
+│  ├─ awesome.jpg
+│  ├─ brush.avif
+│  ├─ built.avif
+│  ├─ businesswoman.jpg
+│  ├─ Caribana.png
+│  ├─ cleaning-florr.avif
+│  ├─ cleaning-office.jpg
+│  ├─ grown.webp
+│  ├─ guy.avif
+│  ├─ iFbdPcSL6PkB4N6f5doKK2ee8.avif
+│  ├─ jazfest.jpeg
+│  ├─ led.avif
+│  ├─ logo.png
+│  ├─ medium-shot.jpg
+│  ├─ men-cleaning.jpg
+│  ├─ my-logo.png
+│  ├─ pride.jpeg
+│  ├─ senior-man.jpg
+│  ├─ taste.jpeg
+│  ├─ tiff.png
+│  ├─ well-done.jpg
+│  ├─ woman.jpg
+│  └─ Yoy2z4yJJAhYA6g5BKbgeZglNY.avif
+├─ README.md
+├─ tailwind.config.js
+├─ tsconfig.json
+└─ utils
+   └─ constants.ts
+
+```

@@ -1,33 +1,38 @@
 @import "tailwindcss";
 
-/* body {
-  @apply font-sans ;
-} */
-
 :root {
-  /* Primary Colors */
-  --blue-primary: #2563eb;      /* Primary buttons, links */
-  --yellow-accent: #facc15;     /* CTA buttons, highlights */
-  --orange-rating: #fb923c;     /* Star ratings */
-
-  /* Backgrounds */
-  --white: #ffffff;
-  --gray-50: #f9fafb;          /* Light sections */
-  --gray-100: #f3f4f6;         /* Hover states */
-  --gray-900: #111827;         /* Footer, dark sections */
-
+  /* Primary Colors - Design System */
+  --yellow-primary: #eeda03;   /* Primary yellow from design */
+  --background-dark: #0a0e27;   /* Dark navy/black background */
+  
   /* Text Colors */
-  --text-primary: #111827;      /* Headings (gray-900) */
-  --text-secondary: #4b5563;    /* Body text (gray-600) */
-  --text-tertiary: #6b7280;     /* Light text (gray-500) */
-  --text-muted: #9ca3af;        /* Disabled/placeholder (gray-400) */
+  --text-white: #ffffff;
+  --text-light-gray: #e5e7eb;
+  
+  /* Accent Cards */
+  --card-yellow: #eeda03;
+  --card-white: #ffffff;
+  
+  /* Legacy support */
+  --blue-primary: #2563eb;
+  --yellow-accent: #eeda03;
+  --orange-rating: #fb923c;
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-900: #111827;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  --text-muted: #9ca3af;
+  --border-light: #e5e7eb;
+  --border-default: #d1d5db;
+  --blue-hover: #1d4ed8;
+  --yellow-hover: #eab308;
+}
 
-  /* Borders */
-  --border-light: #e5e7eb;      /* gray-200 */
-  --border-default: #d1d5db;    /* gray-300 */
-
-  /* States */
-  --blue-hover: #1d4ed8;        /* blue-700 for hover */
-  --yellow-hover: #eab308;      /* yellow-500 for hover */
+body {
+  background-color: var(--background-dark);
+  color: var(--text-white);
 }
 
