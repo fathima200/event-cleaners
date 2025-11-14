@@ -1,12 +1,14 @@
 "use client";
 
+import { servicesData } from "@/utils/servicesData";
 import Navbar from "@/components/header";
 import Footer from "@/components/footer";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CTAButton } from "@/components/CTAButton";
-import Link from 'next/link';
+import Link from "next/link";
 import HowItWorksSection from "@/components/UI/HowItWorks";
+import ServiceCard from "@/components/ServiceCard";
 // import { SectionHeader } from "@/components/SectionHeader"; // Assuming this is a valid import path
 export default function ServicesPage() {
   return (

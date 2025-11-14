@@ -2,9 +2,17 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: [
-      'framerusercontent.com',
-      'c.animaapp.com'
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'framerusercontent.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'c.animaapp.com',
+        port: '',
+      },
     ],
   },
   /* config options here */

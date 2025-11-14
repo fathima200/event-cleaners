@@ -1,4 +1,4 @@
-// CTAButton.tsx
+"use client"
 export type CTAButtonProps = {
     href: string;
     text: string;

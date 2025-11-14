@@ -20,7 +20,7 @@ export default function QuoteForm() {
     console.log("Form submitted:", formData);
     setSubmitted(true);
     // Reset submitted state after 3 seconds
-    setTimeout(() => setSubmitted(false), 3000);
+    setTimeout(() => setSubmitted(false), 9000);
   };
 
 

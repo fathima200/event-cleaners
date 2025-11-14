@@ -1,3 +1,5 @@
+"use client"
+
 export const CTAButton = () => {
   return (
     <div className="relative box-border caret-transparent shrink-0 h-14 md:h-[70px]">

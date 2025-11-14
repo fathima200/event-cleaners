@@ -1,3 +1,5 @@
+"use client"
+
 export type CTABlockProps = {
   variant: string;
   title: string;
