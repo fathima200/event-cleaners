@@ -104,14 +104,17 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Check if window is defined (client-side only)
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        setScrolled(window.scrollY > 20);
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
   }, []);
-
   return (
     <>
       {/* Fixed Navbar - Clean Design */}

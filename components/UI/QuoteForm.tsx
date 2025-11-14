@@ -13,11 +13,16 @@ export default function QuoteForm() {
     contactMethod: "email",
   });
 
+  const [submitted, setSubmitted] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    alert("Thank you! We'll send you a quote within 24 hours.");
+    setSubmitted(true);
+    // Reset submitted state after 3 seconds
+    setTimeout(() => setSubmitted(false), 3000);
   };
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
