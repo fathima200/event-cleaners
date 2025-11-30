@@ -113,7 +113,7 @@ export const servicesData: ServiceData[] = [
         imageUrl: "/pressure-oil.jpg",
         title: "Sidewalks and Walkways",
         description: "Concrete cleaning, gum removal, stain treatment, surface brightening",
-      },
+      }, 
       {
         imageUrl: "/window.jpg",
         title: "Building Facades",

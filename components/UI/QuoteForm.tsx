@@ -13,14 +13,49 @@ export default function QuoteForm() {
     contactMethod: "email",
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<{
+    type: 'idle' | 'loading' | 'success' | 'error';
+    message?: string;
+  }>({ type: 'idle' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    // Reset submitted state after 3 seconds
-    setTimeout(() => setSubmitted(false), 9000);
+    setStatus({ type: 'loading' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      setStatus({ type: 'success', message: 'Request sent successfully! We will get back to you soon.' });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        details: "",
+        date: "",
+        contactMethod: "email",
+      });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setStatus({ type: 'idle' }), 5000);
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Failed to send request. Please try again.'
+      });
+    }
   };
 
 
@@ -44,7 +79,8 @@ export default function QuoteForm() {
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors"
+          disabled={status.type === 'loading'}
+          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50"
         />
       </div>
 
@@ -59,7 +95,8 @@ export default function QuoteForm() {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors"
+          disabled={status.type === 'loading'}
+          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50"
         />
       </div>
 
@@ -74,7 +111,8 @@ export default function QuoteForm() {
           required
           value={formData.phone}
           onChange={handleChange}
-          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors"
+          disabled={status.type === 'loading'}
+          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50"
         />
       </div>
 
@@ -88,7 +126,8 @@ export default function QuoteForm() {
           required
           value={formData.service}
           onChange={handleChange}
-          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors"
+          disabled={status.type === 'loading'}
+          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50"
         >
           <option value="">Select a service</option>
           <option value="event-cleaning">Event Cleaning</option>
@@ -110,8 +149,9 @@ export default function QuoteForm() {
           rows={4}
           value={formData.details}
           onChange={handleChange}
+          disabled={status.type === 'loading'}
           placeholder="Tell us about your project..."
-          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors resize-none"
+          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors resize-none disabled:opacity-50"
         />
       </div>
 
@@ -125,17 +165,23 @@ export default function QuoteForm() {
           name="date"
           value={formData.date}
           onChange={handleChange}
-          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors"
+          disabled={status.type === 'loading'}
+          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50"
         />
       </div>
 
-
+      {status.message && (
+        <div className={`p-4 rounded-lg ${status.type === 'success' ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
+          {status.message}
+        </div>
+      )}
 
       <button
         type="submit"
-        className="w-full bg-yellow-400 text-slate-900 px-10 py-5 rounded-full font-medium text-base tracking-[-0.64px] leading-6 hover:bg-yellow-300 transition-colors font-geist"
+        disabled={status.type === 'loading'}
+        className="w-full bg-yellow-400 text-slate-900 px-10 py-5 rounded-full font-medium text-base tracking-[-0.64px] leading-6 hover:bg-yellow-300 transition-colors font-geist disabled:opacity-70 disabled:cursor-not-allowed"
       >
-        Send Request
+        {status.type === 'loading' ? 'Sending...' : 'Send Request'}
       </button>
     </form>
   );

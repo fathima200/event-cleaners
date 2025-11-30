@@ -21,7 +21,7 @@ const SectionHeader = ({ variant, tagText, title, description, showLink }: { var
 
 export default function ServicesSection() {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
-    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const services = [
     {
@@ -40,34 +40,34 @@ export default function ServicesSection() {
       desc: "Keep plazas like Yorkdale or Scarborough Town Centre pristine with our sweeping, debris removal, and stain treatment services.",
       cta: "View More",
       link: "/services/parking-lot-cleaning",
-      image: "/parking-2.jpg",
+      image: "/parking-1.jpg",
       number: "02",
       label: "Parking Lot Cleaning",
       icon: "https://framerusercontent.com/images/pE1nEasaMORw13ZMV1ob3iYkxCU.png",
       size: "normal"
     },
-    {
-      title: "High-Powered Cleaning for Any Surface",
-      desc: "Our pressure washing restores sidewalks, facades, and parking areas to their original shine, perfect for events and plazas.",
-      cta: "View More",
-      link: "/services/pressure-washing",
-      image: "/pressure-1.jpg",
-      number: "03",
-      label: "Pressure Washing",
-      icon: "https://framerusercontent.com/images/k6W1tvNaOZEih2K6a63bGDb2bY.png",
-      size: "normal"
-    },
-    {
-      title: "Safe, Accessible Spaces All Winter",
-      desc: "Our 24/7 snow removal and de-icing services keep event grounds and plazas safe during Toronto's harsh winters.",
-      cta: "View More",
-      link: "/services/snow-removal",
-      image: "/snow-1.jpg",
-      number: "04",
-      label: "Snow Removal",
-      icon: "https://framerusercontent.com/images/EnT4aQt0PenxFslhe3fkE0yHOpA.png",
-      size: "large"
-    },
+    // {
+    //   title: "High-Powered Cleaning for Any Surface",
+    //   desc: "Our pressure washing restores sidewalks, facades, and parking areas to their original shine, perfect for events and plazas.",
+    //   cta: "View More",
+    //   link: "/services/pressure-washing",
+    //   image: "/pressure-1.jpg",
+    //   number: "03",
+    //   label: "Pressure Washing",
+    //   icon: "https://framerusercontent.com/images/k6W1tvNaOZEih2K6a63bGDb2bY.png",
+    //   size: "normal"
+    // },
+    // {
+    //   title: "Safe, Accessible Spaces All Winter",
+    //   desc: "Our 24/7 snow removal and de-icing services keep event grounds and plazas safe during Toronto's harsh winters.",
+    //   cta: "View More",
+    //   link: "/services/snow-removal",
+    //   image: "/snow-1.jpg",
+    //   number: "04",
+    //   label: "Snow Removal",
+    //   icon: "https://framerusercontent.com/images/EnT4aQt0PenxFslhe3fkE0yHOpA.png",
+    //   size: "large"
+    // },
   ];
 
   useEffect(() => {
@@ -81,7 +81,8 @@ export default function ServicesSection() {
         if (entry.isIntersecting) {
           const index = cardRefs.current.findIndex(ref => ref === entry.target);
           if (index !== -1 && !visibleCards.includes(index)) {
-            setVisibleCards((prev) => [...prev, index]);          }
+            setVisibleCards((prev) => [...prev, index]);
+          }
         }
       });
     }, observerOptions);
@@ -97,7 +98,7 @@ export default function ServicesSection() {
 
   return (
     <section className="relative bg-[#0a0e27] w-full overflow-hidden">
-      
+
       {/* Header Section */}
       <div className="px-6 pt-20 pb-12 md:px-12 md:pt-32 md:pb-16 max-w-[1400px] mx-auto">
         <SectionHeader
@@ -112,16 +113,15 @@ export default function ServicesSection() {
       {/* Services Grid */}
       <div className="relative px-6 pb-20 md:px-12 md:pb-32 max-w-[1400px] mx-auto">
         <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full overflow-hidden md:gap-x-10 md:gap-y-10">
-          
+
           {/* First Row */}
           <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full overflow-hidden md:flex-row">
             {/* Card 1 - Large */}
-            <div ref={(el) => { cardRefs.current[0] = el; }}              className={`relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:w-px md:grow-[0.75] transition-all duration-700 ease-out ${
-                visibleCards.includes(0) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
+            <div ref={(el) => { cardRefs.current[0] = el; }} className={`relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:w-px md:grow-[0.75] transition-all duration-700 ease-out ${visibleCards.includes(0) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
               }`}
             >
-              <Link 
-                href={services[0].link} 
+              <Link
+                href={services[0].link}
                 className="relative text-blue- after:border-solid after:border-yellow-100 content-center items-center box-border caret-transparent gap-x-0 flex h-min justify-center gap-y-0 w-full overflow-hidden rounded-[32px]"
               >
                 <div className="relative content-start items-start bg-zinc-900 box-border caret-transparent gap-x-[420px] flex basis-0 flex-col grow shrink-0 h-min justify-center gap-y-[420px] w-px overflow-hidden p-8 rounded-[32px]">
@@ -179,13 +179,12 @@ export default function ServicesSection() {
 
             {/* Card 2 - Normal */}
             <div ref={(el) => { cardRefs.current[1] = el; }}
-              className={`relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:w-px md:grow transition-all duration-700 ease-out ${
-                visibleCards.includes(1) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
-              }`}
+              className={`relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:w-px md:grow transition-all duration-700 ease-out ${visibleCards.includes(1) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
+                }`}
               style={{ transitionDelay: '150ms' }}
             >
-              <Link 
-                href={services[1].link} 
+              <Link
+                href={services[1].link}
                 className="relative text-blue-700 content-center items-center  box-border caret-transparent gap-x-0 flex h-min justify-center gap-y-0 w-full overflow-hidden p-2 rounded-[32px]"
               >
                 <div className="relative content-start items-start bg-zinc-900 box-border caret-transparent gap-x-[420px] flex basis-0 flex-col grow shrink-0 h-min justify-center gap-y-[420px] w-px overflow-hidden p-8 rounded-3xl after:accent-auto after:box-border after:caret-transparent after:text-blue-700 after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:pointer-events-none after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-3xl after:border-separate after:border-solid after:border-yellow-100 after:left-0 after:top-0 after:font-sans_serif">
@@ -243,9 +242,10 @@ export default function ServicesSection() {
           </div>
 
           {/* Second Row */}
+          {/* Card 3 - Normal */}
           <div className="relative content-center items-center box-border caret-transparent gap-x-5 flex flex-col shrink-0 h-min justify-center gap-y-5 w-full overflow-hidden md:flex-row">
-            {/* Card 3 - Normal */}
-            <div ref={(el) => {cardRefs.current[2] = el; }}
+
+            {/* <div ref={(el) => {cardRefs.current[2] = el; }}
               className={`relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:w-px md:grow transition-all duration-700 ease-out ${
                 visibleCards.includes(2) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
               }`}
@@ -305,10 +305,10 @@ export default function ServicesSection() {
                   </div>
                 </div>
               </Link>
-            </div>
+            </div> */}
 
             {/* Card 4 - Large */}
-            <div ref={(el) => {cardRefs.current[3] = el}}
+            {/* <div ref={(el) => {cardRefs.current[3] = el}}
               className={`relative box-border caret-transparent basis-auto grow-0 shrink-0 w-full md:basis-0 md:w-px md:grow-[0.75] transition-all duration-700 ease-out ${
                 visibleCards.includes(3) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
               }`}
@@ -369,7 +369,7 @@ export default function ServicesSection() {
                   </div>
                 </div>
               </Link>
-            </div>
+            </div> */}
           </div>
 
         </div>

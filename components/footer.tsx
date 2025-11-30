@@ -61,8 +61,8 @@ export default function Footer() {
               {[
                 { label: "Event Cleaning", href: "/services#event-cleaning" },
                 { label: "Parking Lot Cleaning", href: "/services#parking-lot" },
-                { label: "Pressure Washing", href: "/services#pressure-washing" },
-                { label: "Snow Removal", href: "/services#snow-removal" },
+                // { label: "Pressure Washing", href: "/services#pressure-washing" },
+                // { label: "Snow Removal", href: "/services#snow-removal" },
               ].map((link, i) => (
                 <li key={i}>
                   <a
