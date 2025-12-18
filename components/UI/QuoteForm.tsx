@@ -80,7 +80,8 @@ export default function QuoteForm() {
           value={formData.name}
           onChange={handleChange}
           disabled={status.type === 'loading'}
-          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50"
+          className="w-full px-5 py-4 bg-white text-slate-900 border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50 placeholder:text-gray-400"
+          placeholder="Your name"
         />
       </div>
 
@@ -96,7 +97,8 @@ export default function QuoteForm() {
           value={formData.email}
           onChange={handleChange}
           disabled={status.type === 'loading'}
-          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50"
+          className="w-full px-5 py-4 bg-white text-slate-900 border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50 placeholder:text-gray-400"
+          placeholder="name@example.com"
         />
       </div>
 
@@ -112,7 +114,8 @@ export default function QuoteForm() {
           value={formData.phone}
           onChange={handleChange}
           disabled={status.type === 'loading'}
-          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50"
+          className="w-full px-5 py-4 bg-white text-slate-900 border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50 placeholder:text-gray-400"
+          placeholder="(555) 000-0000"
         />
       </div>
 
@@ -120,23 +123,30 @@ export default function QuoteForm() {
         <label htmlFor="service" className="block text-slate-900 text-sm font-medium tracking-[-0.56px] leading-[16.8px] mb-2 uppercase font-geist">
           Service Needed
         </label>
-        <select
-          id="service"
-          name="service"
-          required
-          value={formData.service}
-          onChange={handleChange}
-          disabled={status.type === 'loading'}
-          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50"
-        >
-          <option value="">Select a service</option>
-          <option value="event-cleaning">Event Cleaning</option>
-          <option value="parking-lot">Parking Lot Cleaning</option>
-          <option value="pressure-washing">Pressure Washing</option>
-          <option value="snow-removal">Snow Removal</option>
-          <option value="multiple">Multiple Services</option>
-          <option value="not-sure">Not Sure</option>
-        </select>
+        <div className="relative">
+          <select
+            id="service"
+            name="service"
+            required
+            value={formData.service}
+            onChange={handleChange}
+            disabled={status.type === 'loading'}
+            className="w-full px-5 py-4 bg-white text-slate-900 border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50 appearance-none cursor-pointer"
+          >
+            <option value="" disabled>Select a service</option>
+            <option value="event-cleaning">Event Cleaning</option>
+            <option value="parking-lot">Parking Lot Cleaning</option>
+            {/* <option value="pressure-washing">Pressure Washing</option>
+            <option value="snow-removal">Snow Removal</option>
+            <option value="multiple">Multiple Services</option> */}
+            <option value="not-sure">Not Sure</option>
+          </select>
+          <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+        </div>
       </div>
 
       <div>
@@ -151,7 +161,7 @@ export default function QuoteForm() {
           onChange={handleChange}
           disabled={status.type === 'loading'}
           placeholder="Tell us about your project..."
-          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors resize-none disabled:opacity-50"
+          className="w-full px-5 py-4 bg-white text-slate-900 border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors resize-none disabled:opacity-50 placeholder:text-gray-400"
         />
       </div>
 
@@ -166,7 +176,7 @@ export default function QuoteForm() {
           value={formData.date}
           onChange={handleChange}
           disabled={status.type === 'loading'}
-          className="w-full px-5 py-4 bg-white border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50"
+          className="w-full px-5 py-4 bg-white text-slate-900 border border-gray-200 rounded-2xl font-geist text-base tracking-[-0.64px] focus:outline-none focus:border-yellow-400 transition-colors disabled:opacity-50 appearance-none cursor-pointer"
         />
       </div>
 

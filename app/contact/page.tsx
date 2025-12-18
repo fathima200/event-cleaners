@@ -11,43 +11,43 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative content-center items-center bg-slate-900 box-border caret-transparent gap-x-0 flex flex-col shrink-0 h-min justify-center gap-y-0 w-full overflow-hidden">
-      <div className="relative content-center items-center box-border caret-transparent gap-x-12 flex flex-col shrink-0 h-min justify-center max-w-[680px] gap-y-12 w-full overflow-hidden pt-[150px] pb-5 md:gap-x-20 md:max-w-[1440px] md:gap-y-20 md:pt-40 md:pb-[120px]">
+        <div className="relative content-center items-center box-border caret-transparent gap-x-12 flex flex-col shrink-0 h-min justify-center max-w-[680px] gap-y-12 w-full overflow-hidden pt-[150px] pb-5 md:gap-x-20 md:max-w-[1440px] md:gap-y-20 md:pt-40 md:pb-[120px]">
 
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/spraying-table.jpg"
-            alt="Contact Background"
-            fill
-            className="object-cover opacity-50"
-            priority
-          />
-          <div className="absolute inset-0 bg-slate-900/90" />
-        </div>
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/spraying-table.jpg"
+              alt="Contact Background"
+              fill
+              className="object-cover opacity-50"
+              priority
+            />
+            <div className="absolute inset-0 bg-slate-900/90" />
+          </div>
 
-        <div className="relative content-center items-center box-border caret-transparent gap-x-6 flex flex-col shrink-0 h-min justify-center gap-y-6 w-full">
-      <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex flex-col shrink-0 h-min justify-center gap-y-2 w-full">
-        <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-full">
-          <p className="text-zinc-300 text-sm box-border caret-transparent tracking-[-0.56px] leading-[16.8px] break-words text-center uppercase font-geist md:text-base md:tracking-[-0.64px] md:leading-[19.2px]">
-            let's work together
-          </p>
+          <div className="relative content-center items-center box-border caret-transparent gap-x-6 flex flex-col shrink-0 h-min justify-center gap-y-6 w-full">
+            <div className="relative content-center items-center box-border caret-transparent gap-x-2 flex flex-col shrink-0 h-min justify-center gap-y-2 w-full">
+              <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-full">
+                <p className="text-zinc-300 text-sm box-border caret-transparent tracking-[-0.56px] leading-[16.8px] break-words text-center uppercase font-geist md:text-base md:tracking-[-0.64px] md:leading-[19.2px]">
+                  let's work together
+                </p>
+              </div>
+              <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start max-w-[300px] break-words w-full md:max-w-[860px]">
+                <h1 className="text-white text-5xl font-semibold box-border caret-transparent tracking-[-1.92px] leading-[44px] break-words text-center font-geist md:text-8xl md:tracking-[-3.84px] md:leading-[90px]">
+                  Your Spotless Space Awaits!
+                </h1>
+              </div>
+            </div>
+            <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-center max-w-[520px] break-words w-full md:max-w-screen-sm">
+              <p className="text-zinc-300 text-base box-border caret-transparent tracking-[-0.64px] leading-[21px] break-words text-center font-geist md:text-lg md:tracking-[-0.72px] md:leading-6">
+                Contact Us Now to Get Your Free Quote!
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-start max-w-[300px] break-words w-full md:max-w-[860px]">
-          <h1 className="text-white text-5xl font-semibold box-border caret-transparent tracking-[-1.92px] leading-[44px] break-words text-center font-geist md:text-8xl md:tracking-[-3.84px] md:leading-[90px]">
-          Your Spotless Space Awaits!
-          </h1>
-        </div>
-      </div>
-      <div className="relative box-border caret-transparent flex flex-col shrink-0 justify-center max-w-[520px] break-words w-full md:max-w-screen-sm">
-        <p className="text-zinc-300 text-base box-border caret-transparent tracking-[-0.64px] leading-[21px] break-words text-center font-geist md:text-lg md:tracking-[-0.72px] md:leading-6">
-        Contact Us Now to Get Your Free Quote!
-        </p>
-      </div>
-      </div>
-      </div>
       </section>
 
       {/* Bento Grid Section */}
@@ -57,7 +57,7 @@ export default function ContactPage() {
         <div className="relative z-10 max-w-[1440px] mx-auto">
           {/* Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
-            
+
             {/* Contact Form - Large Card */}
             <div className="md:col-span-7 md:row-span-2 bg-white rounded-2xl p-6 md:p-8 overflow-hidden">
               <div className="mb-6">
@@ -106,8 +106,8 @@ export default function ContactPage() {
                 <p className="text-slate-900 text-xs font-medium tracking-[-0.48px] leading-[14.4px] uppercase mb-2 font-geist">
                   Email
                 </p>
-                <a href="mailto:hello@theeventcleaners.ca" className="text-slate-900 text-lg md:text-xl font-semibold tracking-[-0.8px] md:tracking-[-0.96px] leading-tight font-geist hover:text-yellow-400 transition-colors break-all">
-                  hello@theeventcleaners.ca
+                <a href="mailto:contact@theeventcleaners.com" className="text-slate-900 text-lg md:text-xl font-semibold tracking-[-0.8px] md:tracking-[-0.96px] leading-tight font-geist hover:text-yellow-400 transition-colors break-all">
+                  contact@theeventcleaners.com
                 </a>
               </div>
               <div className="mt-6 pt-4 border-t border-gray-200">
@@ -181,8 +181,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      <FinalCTA/>
-      <ServiceAreas/>
+      <FinalCTA />
+      <ServiceAreas />
       <Footer />
     </>
   );
