@@ -87,8 +87,8 @@ export default function ContactPage() {
                 <p className="text-zinc-400 text-xs font-medium tracking-[-0.48px] leading-[14.4px] uppercase mb-2 font-geist">
                   Call Us
                 </p>
-                <a href="tel:416-XXX-XXXX" className="text-white text-2xl md:text-3xl font-semibold tracking-[-1.2px] md:tracking-[-1.44px] leading-tight font-geist hover:text-yellow-400 transition-colors">
-                  (416) XXX-XXXX
+                <a href="tel:+16472153705" className="text-white text-2xl md:text-3xl font-semibold tracking-[-1.2px] md:tracking-[-1.44px] leading-tight font-geist hover:text-yellow-400 transition-colors">
+                  +1 (647) 215-3705
                 </a>
                 <p className="text-zinc-400 text-xs tracking-[-0.48px] leading-[16px] font-geist mt-3">
                   Monday–Friday: 8am–6pm
